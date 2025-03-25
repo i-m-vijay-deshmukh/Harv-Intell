@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Navigation Logic
     document.getElementById("weather-section").addEventListener("click", () => {
-        window.location.href = "weather.html";
+        window.location.href = "weather/weather.html";
     });
     
     document.getElementById("chatbot-section").addEventListener("click", () => {
