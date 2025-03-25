@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Insights</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>🌤 Weather Insights</h1>
+        <button id="theme-toggle">🌙</button>
+    </header>
+
+    <main>
+        <section id="current-weather">
+            <h2 id="location">Fetching Location...</h2>
+            <p id="temperature">--°C</p>
+            <p id="condition">Loading...</p>
+            <div class="details">
+                <p>Humidity: <span id="humidity">--%</span></p>
+                <p>Wind Speed: <span id="wind">-- km/h</span></p>
+                <p>air quality index: <span id="aqi">--</span></p>
+                <p id="aqi-status"></p> <!-- This will show the message -->
+            </div>
+        </section>
+
+        <section id="hourly-forecast">
+            <h2>Hourly Forecast</h2>
+            <div id="hourly-container"></div>
+        </section>
+
+        <section id="weekly-forecast">
+            <h2>7-Day Forecast</h2>
+            <div id="weekly-container"></div>
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,91 @@
+/* Futuristic Theme */
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: radial-gradient(circle at top, #0d0d0d, #1a1a1a);
+    color: #e0e0e0;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header Styling */
+header {
+    background: linear-gradient(90deg, #00eaff, #007bff);
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+    text-shadow: 0 0 10px #00eaff;
+}
+
+/* News Container */
+#news-container {
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* News Card */
+.news-card {
+    width: 45%;
+    max-width: 400px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 255, 200, 0.3);
+    overflow: hidden;
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.news-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(0, 255, 200, 0.6);
+}
+
+/* News Image */
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* News Title */
+.news-card h2 {
+    font-size: 20px;
+    margin: 10px 0;
+    color: #00eaff;
+    text-shadow: 0 0 10px rgba(0, 234, 255, 0.8);
+}
+
+/* Read More Button */
+.news-card a {
+    display: inline-block;
+    margin-top: 10px;
+    color: #00eaff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.news-card a:hover {
+    color: #ff33cc;
+}
+
+/* Loading Animation */
+#loading {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #00eaff;
+    animation: blink 1.5s infinite alternate;
+}
+
+@keyframes blink {
+    0% { opacity: 1; }
+    100% { opacity: 0.5; }
+}

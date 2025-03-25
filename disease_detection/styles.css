@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    /* font-family: 'Orbitron', sans-serif; */
+    /* font-family: 'Rajdhani', sans-serif; */
+    font-family: 'Exo', sans-serif;
+    text-align: center;
+    background: radial-gradient(circle at top, #0d0d0d, #1a1a1a);
+    color: #e0e0e0;
+    padding: 20px;
+    overflow-x: hidden;
+}
+
+
+@media (max-width: 768px) {
+    .response-box {
+        font-size: 16px;
+        padding: 15px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+}
+
+/* Headings */
+h1 {
+    color: #00eaff;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px #00eaff, 0 0 30px #007bff;
+}
+
+/* Upload container */
+#upload-container {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 15px rgba(0, 234, 255, 0.5);
+}
+#imgage-upload {
+    color: rgb(249, 246, 246);
+    border: none;
+    padding: 14px 22px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 15px rgba(0, 234, 255, 0.6);
+    transition: all 0.3s ease-in-out;
+}
+
+
+#upload-container {
+    color: rgb(249, 246, 246);
+    border: none;
+    padding: 14px 22px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 15px rgba(0, 234, 255, 0.6);
+    transition: all 0.3s ease-in-out;
+}
+/* Center the uploaded image */
+#image-preview-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#previewImage {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 234, 255, 0.6);
+    transition: transform 0.3s ease-in-out;
+}
+
+#previewImage:hover {
+    transform: scale(1.05);
+}
+
+/* Button styling */
+button {
+    background: linear-gradient(90deg, #00eaff, #007bff);
+    color: white;
+    border: none;
+    padding: 14px 22px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 0 15px rgba(0, 234, 255, 0.6);
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #007bff, #00eaff);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 234, 255, 1);
+}
+
+/* Response Box - Clearer and More Readable */
+.response-box {
+    background: rgba(20, 20, 20, 0.9); /* Darker background for high contrast */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 12px;
+    font-size: 20px;
+    color: #ffffff; /* Pure white for readability */
+    text-align: left; /* Left-align for better readability */
+    box-shadow: 0 0 8px rgba(0, 255, 200, 0.4); /* Softer glow */
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease-in-out;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    line-height: 1.6; /* Improved spacing for easy reading */
+}
+
+/* Title in Response Box */
+.response-box h3 {
+    color: #00eaff;
+    text-shadow: 0 0 10px rgba(0, 234, 255, 0.8);
+    font-size: 22px;
+    text-align: center;
+}
+
+/* Bullet Points - Clearer */
+.response-box p {
+    font-size: 18px;
+    color: #dddddd;
+}
+
+.response-box ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.response-box ul li {
+    padding: 5px 0;
+    font-size: 18px;
+}
+
+.response-box ul li::before {
+    content: "🔹"; /* Bullet point icon */
+    color: #00eaff;
+    padding-right: 10px;
+}
+
+/* Hover Effect */
+.response-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(0, 255, 200, 0.5);
+}
+
+
+
+.response-box hr {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    margin: 15px 0;
+}
+
+/* Smooth animations */
+@keyframes glow {
+    0% { text-shadow: 0 0 5px #00eaff; }
+    50% { text-shadow: 0 0 15px #00eaff, 0 0 30px #007bff; }
+    100% { text-shadow: 0 0 5px #00eaff; }
+}
+
+h1 {
+    animation: glow 2s infinite alternate;
+}

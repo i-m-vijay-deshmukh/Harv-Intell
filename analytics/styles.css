@@ -1,0 +1,163 @@
+/* 🌟 Futuristic AI-Themed Styles */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    font-family: 'Exo', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at top, #0d0d0d, #1a1a1a);
+    color: #e0e0e0;
+    text-align: center;
+}
+
+/* 🔹 Header */
+header {
+    background: linear-gradient(90deg, #00eaff, #007bff);
+    color: white;
+    padding: 20px;
+    font-size: 24px;
+    text-shadow: 0 0 10px rgba(0, 234, 255, 0.8);
+    border-bottom: 3px solid #00eaff;
+}
+
+/* 🌾 Crop Search Section */
+#crop-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    margin: 20px auto;
+    width: 50%;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 255, 200, 0.3);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease-in-out;
+}
+
+#crop-section:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(0, 255, 200, 0.5);
+}
+
+/* 🖊️ Input Field */
+#crop-input {
+    width: 70%;
+    padding: 12px;
+    font-size: 18px;
+    border: 2px solid #00eaff;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+    outline: none;
+}
+
+/* 🚀 Button Styling */
+button {
+    background: linear-gradient(90deg, #00eaff, #007bff);
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 15px rgba(0, 234, 255, 0.6);
+}
+
+button:hover {
+    background: linear-gradient(90deg, #007bff, #00eaff);
+    transform: scale(1.1);
+    box-shadow: 0 0 20px rgba(0, 234, 255, 1);
+}
+
+/* 📊 Results Section */
+#results-section {
+    background: rgba(17, 16, 16, 0.1);
+    margin: 20px auto;
+    padding: 20px;
+    width: 70%;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 255, 200, 0.3);
+    text-align: left;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+#results h2 {
+    color: #00eaff;
+    text-shadow: 0 0 8px rgba(0, 234, 255, 0.8);
+    font-size: 22px;
+}
+
+/* 🔗 Links */
+#results a {
+    display: block;
+    color: #00eaff;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+#results a:hover {
+    color: #ff33cc;
+}
+
+/* 📱 Mobile Optimization */
+@media (max-width: 768px) {
+    #crop-section, #results-section {
+        width: 90%;
+    }
+
+    #crop-input {
+        width: 90%;
+    }
+
+    button {
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+}
+
+/* 🚀 Footer */
+footer {
+    background: linear-gradient(90deg, #007bff, #00eaff);
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+/* 🌾 Input Field - Futuristic Look */
+#crop-input {
+    width: 30%;
+    padding: 12px;
+    font-size: 18px;
+    border: 2px solid #00eaff;
+    border-radius: 5px;
+    background: rgba(0, 0, 0, 0.8); /* Dark futuristic input */
+    color: rgb(0, 0,0,0.8);
+    outline: none;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 234, 255, 0.4);
+    transition: all 0.3s ease-in-out;
+}
+
+/* 🔹 Focus Effect */
+#crop-input:focus {
+    border-color: #ff33cc;
+    box-shadow: 0 0 15px rgba(255, 51, 204, 0.7);
+    transform: scale(1.05);
+}
+/* 🌟 Proper Formatting for Lists */
+ul, ol {
+    list-style: none; /* Removes default bullet points */
+    padding-left: 0;
+}
+
+ul li::before {
+    content: "✔"; /* Use a checkmark instead of an asterisk */
+    color: #00eaff; /* Neon blue futuristic color */
+    font-weight: bold;
+    margin-right: 8px;
+}

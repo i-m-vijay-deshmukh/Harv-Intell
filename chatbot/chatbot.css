@@ -1,0 +1,328 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Exo', sans-serif;
+  background: radial-gradient(circle at top, #0d1b2a, #1b263b);
+  color: #ffffff;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  animation: backgroundGlow 6s infinite alternate ease-in-out;
+}
+
+/* Background Animation */
+@keyframes backgroundGlow {
+  0% { background: radial-gradient(circle at top, #0d1b2a, #1b263b); }
+  100% { background: radial-gradient(circle at top, #0d1b2a, #293447); }
+}
+
+/* Chat Box */
+.chat-box {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Chat Header */
+.chat-box-header {
+  background: linear-gradient(90deg, #00feba, #5b548a);
+  color: #ffffff;
+  padding: 16px;
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.6);
+  animation: pulseGlow 3s infinite alternate ease-in-out;
+}
+
+/* Glow Animation */
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 10px rgba(0, 255, 255, 0.6); }
+  100% { box-shadow: 0 0 20px rgba(0, 255, 255, 1); }
+}
+
+/* Chat Body */
+.chat-box-body {
+  flex: 1;
+  padding: 16px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  scroll-behavior: smooth;
+}
+
+/* Smooth Scrollbar */
+.chat-box-body::-webkit-scrollbar {
+  width: 5px;
+}
+
+.chat-box-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.chat-box-body::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 255, 0.5);
+  border-radius: 10px;
+}
+
+/* Message Styling */
+.chat-box-body .message,
+.chat-box-body .response {
+  font-size: 18px;
+  line-height: 1.6;
+  width: 100%;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInText 0.5s forwards;
+}
+
+/* Fade-in Text Animation */
+@keyframes fadeInText {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* User Message */
+.chat-box-body .message {
+  text-align: right;
+  font-weight: bold;
+  color: #00feba;
+  animation-delay: 0.2s;
+}
+
+/* Bot Response */
+.chat-box-body .response {
+  text-align: left;
+  font-weight: normal;
+  color: #ffffff;
+  animation-delay: 0.4s;
+}
+
+/* Chat Footer */
+.chat-box-footer {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  box-shadow: 0 -2px 8px rgba(0, 255, 255, 0.3);
+}
+
+/* Input Field */
+.chat-box-footer input[type="text"] {
+  flex: 1;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: none;
+  border-radius: 24px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.15); /* Slightly darker background */
+  color: #090909;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  box-shadow: inset 0 0 5px rgba(0, 255, 255, 0.15); /* Lower brightness */
+  transition: all 0.3s ease;
+}
+
+/* Darker Placeholder Text */
+.chat-box-footer input[type="text"]::placeholder {
+  color: rgba(11, 10, 10, 0.879); /* Darker for better contrast */
+}
+
+/* Input Field Focus */
+.chat-box-footer input[type="text"]:focus {
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: inset 0 0 8px rgba(0, 255, 255, 0.3); /* Softer glow */
+}
+
+/* Send Button */
+.chat-box-footer button {
+  margin-left: 12px;
+  padding: 10px 25px;
+  font-size: 16px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #00feba, #00aaff);
+  color: #000;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+}
+
+.chat-box-footer button:hover {
+  background: linear-gradient(135deg, #00aaff, #00feba);
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+  transform: scale(1.05);
+}
+
+.chat-box-footer button:active {
+  background: #0099cc;
+}
+
+/* Typing Animation */
+@keyframes typing {
+  0% { opacity: 0.3; }
+  50% { opacity: 1; }
+  100% { opacity: 0.3; }
+}
+
+.typing-indicator {
+  width: 50px;
+  height: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.typing-indicator div {
+  width: 10px;
+  height: 10px;
+  background: #ffffff;
+  border-radius: 50%;
+  animation: typing 1.5s infinite;
+}
+
+.typing-indicator div:nth-child(1) { animation-delay: 0s; }
+.typing-indicator div:nth-child(2) { animation-delay: 0.2s; }
+.typing-indicator div:nth-child(3) { animation-delay: 0.4s; }
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .chat-box {
+    border-radius: 0;
+  }
+}
+
+/* Loading Animation - Typing Dots */
+.loading {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #00ffea;
+    font-weight: bold;
+}
+
+.loading span {
+    width: 6px;
+    height: 6px;
+    margin: 0 3px;
+    background-color: #00ffea;
+    border-radius: 50%;
+    display: inline-block;
+    animation: blink 1.4s infinite;
+}
+
+.loading span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loading span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes blink {
+    0% { opacity: 0.2; }
+    20% { opacity: 1; }
+    100% { opacity: 0.2; }
+}
+
+
+/* Chat Input Box - Matching AI Response Font */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+#chatInput {
+    font-family: 'Orbitron', sans-serif; /* Same futuristic font */
+    font-size: 16px; /* Adjust for readability */
+    font-weight: bold;
+    color: #00ffea; /* Same neon blue text */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark background */
+    border: 2px solid #00ffea; /* Glowing border */
+    padding: 10px;
+    border-radius: 8px;
+    outline: none;
+    letter-spacing: 1px; /* High-tech feel */
+}
+
+/* Change Placeholder Font as Well */
+#chatInput::placeholder {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    color: rgba(0, 255, 234, 0.5); /* Dimmed neon blue */
+}
+
+
+/* Popup Background (Dimmed) */
+.popup-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* Popup Box */
+.popup {
+    background: #121212; /* Dark modern background */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 20px #00ffea; /* Neon glow */
+    max-width: 400px;
+}
+
+/* Popup Text */
+.popup p {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+/* Popup Button */
+.popup button {
+    font-family: 'Orbitron', sans-serif;
+    background: #00ffea;
+    color: #121212;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.popup button:hover {
+    background: #00bfa5; /* Slightly darker neon */
+}
