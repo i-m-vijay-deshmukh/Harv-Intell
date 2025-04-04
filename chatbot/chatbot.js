@@ -3,6 +3,8 @@ const inputField = chatBox?.querySelector("input[type='text']");
 const button = chatBox?.querySelector("button");
 const chatBoxBody = chatBox?.querySelector(".chat-box-body");
 
+let currentUtterance = null;
+
 if (button && inputField && chatBoxBody) {
   button.addEventListener("click", sendMessage);
   inputField.addEventListener("keypress", function(event) {
@@ -20,13 +22,11 @@ if (button && inputField && chatBoxBody) {
     // Add user message to chat
     chatBoxBody.innerHTML += `<div class="message"><p>${message}</p></div>`;
 
-// Show loading state
-const loadingDiv = document.createElement("div");
-loadingDiv.classList.add("response", "loading");
-// Show typing dots animation
-loadingDiv.innerHTML = "<span>.</span><span>.</span><span>.</span>"; 
-chatBoxBody.appendChild(loadingDiv);
-
+    // Show loading state
+    const loadingDiv = document.createElement("div");
+    loadingDiv.classList.add("response", "loading");
+    // Show typing dots animation
+    loadingDiv.innerHTML = "<span>.</span><span>.</span><span>.</span>"; 
     chatBoxBody.appendChild(loadingDiv);
 
     scrollToBottom();
@@ -42,18 +42,17 @@ chatBoxBody.appendChild(loadingDiv);
       
           let botReply = data.message || "Sorry, I couldn't generate a response.";
           
-          // 🔥 Remove all unwanted markdown symbols (*, **, ***)
+          // Remove all unwanted markdown symbols (*, **, ***)
           botReply = botReply.replace(/\*\*\*/g, "").replace(/\*\*/g, "").replace(/\*/g, "");
       
-          // 🔥 Apply typing effect
+          // Apply typing effect
           typeResponse(botReply);
         })
         .catch(error => {
-          console.error("❌ Error:", error);
+          console.error("Error:", error);
           loadingDiv.remove();
           chatBoxBody.innerHTML += `<div class="response error"><p>Error: ${error.message}</p></div>`;
         });
-      
   }
 
   function typeResponse(text, speed = 30) {
@@ -67,10 +66,38 @@ chatBoxBody.appendChild(loadingDiv);
         responseDiv.innerHTML += text[index];
         index++;
         setTimeout(type, speed);
+      } else {
+        addSpeakerIcon(responseDiv, text);
       }
     }
     type();
     scrollToBottom();
+  }
+
+  function addSpeakerIcon(responseDiv, text) {
+    const speakerIcon = document.createElement("span");
+    speakerIcon.classList.add("speaker-icon");
+    speakerIcon.innerHTML = "🔊";
+    speakerIcon.style.cursor = "pointer";
+    speakerIcon.addEventListener("click", () => {
+      if (currentUtterance) {
+        speechSynthesis.cancel();
+      }
+      currentUtterance = new SpeechSynthesisUtterance(text);
+      speechSynthesis.speak(currentUtterance);
+    });
+    responseDiv.appendChild(speakerIcon);
+
+    const cancelIcon = document.createElement("span");
+    cancelIcon.classList.add("cancel-icon");
+    cancelIcon.innerHTML = "⏹️";
+    cancelIcon.style.cursor = "pointer";
+    cancelIcon.addEventListener("click", () => {
+      if (currentUtterance) {
+        speechSynthesis.cancel();
+      }
+    });
+    responseDiv.appendChild(cancelIcon);
   }
 
   function scrollToBottom() {
